@@ -1,47 +1,137 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester");
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
+* {
+  /* outline: 1px solid red; */
+}
 body {
+  box-sizing: border-box;
   color: black;
-  display: table;
   font-family: Georgia, serif;
   font-size: 24px;
   text-align: center;
-  height: 100vh;
+}
+.github {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+.github a {
   display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 4px;
+  color: #000;
+  transition: color 0.3s ease-in-out;
+}
+.github a:hover {
+  color: #83d0e6;
+}
+.github img {
+  width: 16px;
+  height: 16px;
+}
+.container {
+  padding: 1.5vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-height: calc(100vh - 3vw);
+}
+.certificate {
+  border: 1.5vw solid #83d0e6;
+  position: relative;
+  padding: 0.4vw;
+  border-radius: 15px;
+  width: 70vw;
+  overflow: hidden;
+  height: 40vw;
+  display: flex;
+  gap: 2.5vw;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.container {
-  border: 20px solid #83D0E6;
-  width: 750px;
-  height: 563px;
+.logos {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 2vw;
 }
 .logo {
-  color: #83D0E6;
+  width: 4.5vw;
+  height: 4.5vw;
 }
 
 .marquee {
-  color: #83D0E6;
-  font-size: 48px;
-  margin: 20px;
-}
-.assignment {
-  margin: 20px;
+  color: #83d0e6;
+  font-size: 4.5vw;
+  word-break: break-word;
 }
 .person {
   border-bottom: 2px solid black;
-  font-size: 32px;
+  font-size: 4vw;
+  font-family: Rochester;
   font-style: italic;
-  margin: 20px auto;
-  width: 400px;
+  max-width: 80%;
 }
 .reason {
-  margin: 20px;
+  font-size: 3vw;
+}
+
+.detail-1 {
+  position: absolute;
+  width: 32vw;
+  height: 20vw;
+  background-color: #83d0e6;
+  top: -13vw;
+  left: -16vw;
+  transform: rotate(320deg);
+}
+
+.detail-2 {
+  position: absolute;
+  width: 32vw;
+  height: 20vw;
+  background-color: #83d0e6;
+  bottom: -13vw;
+  right: -16vw;
+  transform: rotate(320deg);
+}
+
+@media (max-width: 767px) {
+  .container {
+    min-height: 60vh;
+  }
+  .certificate {
+    width: 100vw;
+    height: 55vw;
+    gap: 3vw;
+    border-width: 3vw;
+  }
+  .marquee {
+    font-size: 6vw;
+  }
+
+  .person {
+    font-size: 5vw;
+  }
+  .reason {
+    font-size: 4vw;
+  }
+  .logo {
+    width: 7vw;
+    height: 7vw;
+  }
+}
+
+@media (min-width: 1100px) {
+  .certificate {
+    max-width: unset;
+    max-height: unset;
+    width: 70vw;
+    aspect-ratio: 1.8;
+  }
 }
